@@ -1,0 +1,37 @@
+@use "./color-font";
+
+// home page
+// @use "./homePage/test";
+
+//book landing page
+// @use "./landingPage/header";
+// @use "./landingPage/top";
+@use "./landingPage/footer";
+// @use "./landingPage/bookcover";
+
+//global style
+
+// color
+.mainOrange {
+  color: color-font.$mainOrange;
+}
+.mainDark {
+  color: color-font.$mainDark;
+}
+.subWhite {
+  color: color-font.$subWhite;
+}
+.subBlue {
+  color: color-font.$subBlue;
+}
+.subGray {
+  color: color-font.$subGray;
+}
+
+//font
+.logo {
+  font-family: color-font.$logo;
+}
+body {
+  font-family: color-font.$bodyFont;
+}

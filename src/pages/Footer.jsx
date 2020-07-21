@@ -10,6 +10,7 @@ const twtterUrl = "https://twitter.com/lintonto";
 const textP = "Want to hear more from me?";
 const email = "larry@LiveWellWithPD.com"
 const phoneNum = "(416) 710 6546";
+const thanksMsg = "";
 
 
 const Footer = () => {
@@ -29,7 +30,9 @@ const Footer = () => {
         }
       })
     }
-    console.log("params",params);
+    if (params.success){
+      thanksMsg="Thank you for your subscribe";
+    }
   });
   return (
     <>
@@ -44,6 +47,7 @@ const Footer = () => {
       <input type="text" name="email"  /> Email
       <input type="submit" name="submit" value="Subscribe" /> 
     </form>
+    <p>{thanksMsg}</p>
     </>
 
   );

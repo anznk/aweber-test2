@@ -28,6 +28,7 @@ const Footer = () => {
         }
       })
     }
+    console.log("params",params);
   });
   return (
     <>

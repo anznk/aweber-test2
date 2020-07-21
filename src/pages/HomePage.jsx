@@ -14,7 +14,7 @@ function HomePage() {
           <Route exact path="/" component={Home} />
           {/* <Route path="/about" component={About} />
           <Route path="/test" component={Test} /> */}
-          <Route path="/book" component={BookLanding} />
+          <Route exact path="/book" component={BookLanding} />
         </Switch>
       </Router>
     </>

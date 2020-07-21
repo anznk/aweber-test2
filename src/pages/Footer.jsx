@@ -33,7 +33,7 @@ const Footer = () => {
     <>
     <form action="https://www.aweber.com/scripts/addlead.pl" method="post"> 
       <input type="hidden" name="listname" value="awlist5671012" />
-      <input type="hidden" name="redirect" value="https://anzunakayama.dev/?success=true" />
+      <input type="hidden" name="redirect" value="https://anzunakayama.dev/home/?success=true" />
       {/* <input type="hidden" name="meta_redirect_onlist" value="https://www.google.ca/" />  */}
       <input type="hidden" name="meta_adtracking" value="custom form" />
       <input type="hidden" name="meta_message" value="1" /> 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import img
 // import larry3 from "../materials/picture/larry3.jpg";
 import send from "../materials/Button/SendButton.svg";
@@ -8,12 +8,13 @@ import twitterIcon from "../materials/SNS_icon/Twitter_Logo_CircleWhite.svg";
 const fbUrl = "https://www.facebook.com/lintonwellness/";
 const twtterUrl = "https://twitter.com/lintonto";
 const textP = "Want to hear more from me?";
-const email = "larry@LiveWellWithPD.com"
+const email = "larry@LiveWellWithPD.com";
 const phoneNum = "(416) 710 6546";
-const thanksMsg = "";
 
 
 const Footer = () => {
+  // let params = {}
+  const [thanksMsg, setThanksMsg] = useState("");
   useEffect(() => {
     let urlParamStr = window.location.search
     let params = {}
@@ -30,10 +31,11 @@ const Footer = () => {
         }
       })
     }
-    if (params.success){
-      thanksMsg="Thank you for your subscribe";
+    if (params.success==="true"){
+      setThanksMsg('Thank you for your subscribe');
     }
   });
+
   return (
     <>
     <form action="https://www.aweber.com/scripts/addlead.pl" method="post"> 
@@ -47,7 +49,7 @@ const Footer = () => {
       <input type="text" name="email"  /> Email
       <input type="submit" name="submit" value="Subscribe" /> 
     </form>
-    <p>{thanksMsg}</p>
+    {thanksMsg}
     </>
 
   );

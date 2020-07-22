@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import "../styles/style.scss";
 
 const Footer = () => {
-  const el = useRef(null);
+  const footer = useRef(null);
   const [thanksMsg, setThanksMsg] = useState("");
    useEffect(() => {
     let urlParamStr = window.location.search
@@ -19,7 +19,7 @@ const Footer = () => {
     }
     if (params.success==="true"){
       setThanksMsg('Thank you for your subscribe');
-      el.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
+      footer.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
     }
     
   },[]);
@@ -33,7 +33,7 @@ const Footer = () => {
     <div className="second">
     adfasdfa
     </div>
-    <div ref={el}>
+    <div ref={footer}>
       <form action="https://www.aweber.com/scripts/addlead.pl" method="post"> 
         <input type="hidden" name="listname" value="awlist5671012" />
         <input type="hidden" name="redirect" value="https://upbeat-mclean-135ab6.netlify.app/book?success=true" />

@@ -12,6 +12,17 @@
 //global style
 
 // color
+.top{
+    height:100vh;
+    width: 100%;
+    background: color-font.$mainOrange;
+}
+.second{
+    height:100vh;
+    width: 100%;
+    background: color-font.$mainDark;
+}
+
 .mainOrange {
   color: color-font.$mainOrange;
 }

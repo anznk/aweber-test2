@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import send from "../materials/Button/SendButton.svg";
 import fbIcon from "../materials/SNS_icon/Facebook_Logo_CircleWhite.svg";
 import twitterIcon from "../materials/SNS_icon/Twitter_Logo_CircleWhite.svg";
+
+import "../styles/style.scss";
 // constants
 const fbUrl = "https://www.facebook.com/lintonwellness/";
 const twtterUrl = "https://twitter.com/lintonto";
@@ -12,8 +14,8 @@ const email = "larry@LiveWellWithPD.com";
 const phoneNum = "(416) 710 6546";
 
 
+
 const Footer = () => {
-  // let params = {}
   const [thanksMsg, setThanksMsg] = useState("");
   useEffect(() => {
     let urlParamStr = window.location.search
@@ -38,6 +40,13 @@ const Footer = () => {
 
   return (
     <>
+    <div className="top">
+    asdfadsf
+    </div>
+    <div className="second">
+    adfasdfa
+    </div>
+    <div id="footer">
     <form action="https://www.aweber.com/scripts/addlead.pl" method="post"> 
       <input type="hidden" name="listname" value="awlist5671012" />
       <input type="hidden" name="redirect" value="https://upbeat-mclean-135ab6.netlify.app/book?success=true" />
@@ -50,8 +59,8 @@ const Footer = () => {
       <input type="submit" name="submit" value="Subscribe" /> 
     </form>
     {thanksMsg}
+    </div>
     </>
-
   );
 };
 

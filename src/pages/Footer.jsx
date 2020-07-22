@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from 'react';
-// import img
-// import larry3 from "../materials/picture/larry3.jpg";
-import send from "../materials/Button/SendButton.svg";
-import fbIcon from "../materials/SNS_icon/Facebook_Logo_CircleWhite.svg";
-import twitterIcon from "../materials/SNS_icon/Twitter_Logo_CircleWhite.svg";
-
+import React, { useRef, useEffect, useState } from 'react';
 import "../styles/style.scss";
-// constants
-const fbUrl = "https://www.facebook.com/lintonwellness/";
-const twtterUrl = "https://twitter.com/lintonto";
-const textP = "Want to hear more from me?";
-const email = "larry@LiveWellWithPD.com";
-const phoneNum = "(416) 710 6546";
-
-
 
 const Footer = () => {
+  const myRef = useRef(null);
   const [thanksMsg, setThanksMsg] = useState("");
-  useEffect(() => {
+  const scrollToRef = (ref) => window.scrollTo(0, ref);
+   useEffect(() => {
     let urlParamStr = window.location.search
     let params = {}
-
     if (urlParamStr) {
       urlParamStr = urlParamStr.substring(1)
-      
-
       urlParamStr.split('&').forEach( param => {
         const temp = param.split('=')
         params = {
@@ -36,7 +21,9 @@ const Footer = () => {
     if (params.success==="true"){
       setThanksMsg('Thank you for your subscribe');
     }
-  });
+    scrollToRef(myRef);
+  },[]);
+
 
   return (
     <>
@@ -46,22 +33,22 @@ const Footer = () => {
     <div className="second">
     adfasdfa
     </div>
-    <div id="footer">
-    <form action="https://www.aweber.com/scripts/addlead.pl" method="post"> 
-      <input type="hidden" name="listname" value="awlist5671012" />
-      <input type="hidden" name="redirect" value="https://upbeat-mclean-135ab6.netlify.app/book#footer?success=true" />
-      {/* <input type="hidden" name="meta_redirect_onlist" value="https://www.google.ca/" />  */}
-      <input type="hidden" name="meta_adtracking" value="custom form" />
-      <input type="hidden" name="meta_message" value="1" /> 
-      <input type="hidden" name="meta_required" value="email" /> 
-      <input type="hidden" name="meta_forward_vars" value="1" /> 
-      <input type="text" name="email"  /> Email
-      <input type="submit" name="submit" value="Subscribe" /> 
-    </form>
-    {thanksMsg}
+    <div ref={myRef}>
+      <form action="https://www.aweber.com/scripts/addlead.pl" method="post"> 
+        <input type="hidden" name="listname" value="awlist5671012" />
+        <input type="hidden" name="redirect" value="https://upbeat-mclean-135ab6.netlify.app/book?success=true" />
+        <input type="hidden" name="meta_adtracking" value="custom form" />
+        <input type="hidden" name="meta_message" value="1" /> 
+        <input type="hidden" name="meta_required" value="email" /> 
+        <input type="hidden" name="meta_forward_vars" value="1" /> 
+        <input type="text" name="email"  /> Email
+        <input type="submit" name="submit" value="Subscribe" /> 
+      </form>
+      <p>{thanksMsg}</p>
     </div>
     </>
   );
+  
 };
 
 export default Footer;
